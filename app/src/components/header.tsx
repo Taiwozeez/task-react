@@ -1,4 +1,3 @@
-
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,9 +11,9 @@ import {
   faInstagram,
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons"; // Correct import for brand icons
+import Image from "next/image"; // Import Image from Next.js
 
 const Header = () => {
-  
   return (
     <header className="relative">
       {/* Navigation Bar */}
@@ -125,9 +124,11 @@ const Header = () => {
             data-aos="fade-up"
             data-aos-delay="1000"
           >
-            <img
+            <Image
               src="/overlayone.jpeg"
               alt="Classified Listings"
+              width={500} // Add width
+              height={300} // Add height
               className="w-full transition-transform duration-300 transform group-hover:scale-110"
             />
             <div
@@ -143,9 +144,11 @@ const Header = () => {
             data-aos="fade-up"
             data-aos-delay="1200"
           >
-            <img
+            <Image
               src="/overlaytwo.jpeg"
               alt="Dealer & Seller Profile"
+              width={500}
+              height={300}
               className="w-full transition-transform duration-300 transform group-hover:scale-110"
             />
             <div
@@ -161,9 +164,11 @@ const Header = () => {
             data-aos="fade-up"
             data-aos-delay="1400"
           >
-            <img
+            <Image
               src="/overlaythree.jpeg"
               alt="Membership Ads Listings"
+              width={500}
+              height={300}
               className="w-full transition-transform duration-300 transform group-hover:scale-110"
             />
             <div
