@@ -11,14 +11,10 @@ interface CartItem {
 }
 
 const Cart: React.FC = () => {
-  const { cartState, productState } = useContext(GlobalContext);
+  const { cartState, productState } = useContext(GlobalContext); // Using productState here
   console.log("cart state", cartState);
-  const cartData = cartState?.data?.map((cur) => {
-    return {
-      product: productState?.data?.find((p) => p._id === cur.id),
-      quantity: cur.quantity,
-    };
-  });
+  console.log("product state", productState); // For debugging
+
   const [cartItems, setCartItems] = useState<CartItem[]>([
     { id: 1, name: "Clothes", price: 50000, quantity: 2 },
     { id: 2, name: "Clothes", price: 50000, quantity: 2 },
@@ -93,7 +89,7 @@ const Cart: React.FC = () => {
                   <i className="fas fa-exclamation-circle"></i> 7 units left
                 </p>
                 <p className="mt-1 text-xs font-medium text-red-800">
-                  <i className="fas fa-shipping-fast"></i> Athentic Stores Express
+                  <i className="fas fa-shipping-fast"></i> Authentic Stores Express
                 </p>
               </div>
             </div>
@@ -136,13 +132,36 @@ const Cart: React.FC = () => {
           </div>
         ))}
 
+        {/* Displaying available products from productState */}
+        <div className="mt-6">
+          <h3 className="mb-4 text-xl font-semibold text-white">Available Products</h3>
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
+            {productState.map((product) => (
+              <div key={product.id} className="bg-white p-4 rounded-lg shadow-md">
+                <Image
+                  src="/testimony111.jpg"
+                  alt={product.name}
+                  width={100}
+                  height={100}
+                  className="object-cover h-24 rounded"
+                />
+                <h4 className="text-lg font-medium">{product.name}</h4>
+                <p className="text-sm text-gray-500">₦{product.price.toLocaleString()}</p>
+                <button className="mt-2 w-full py-2 text-white bg-pink-600 rounded-lg hover:bg-pink-700">
+                  Add to Cart
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="flex mt-6 space-x-4">
           <div className="flex flex-col w-full">
             <button className="w-full py-2 mb-4 text-white bg-pink-600 rounded-lg hover:bg-pink-700">
               Checkout (₦
               {cartItems
                 .reduce((total, item) => total + item.price * item.quantity, 0)
-                .toLocaleString()}
+                .toLocaleString()}{" "}
               )
             </button>
           </div>

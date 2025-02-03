@@ -1,12 +1,12 @@
 import React from 'react';
-import Footer from './footer.css';
+import './footer.tsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapMarkerAlt, faPhone, faEnvelope, faShoppingCart, faStore } from '@fortawesome/free-solid-svg-icons';
+import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faTwitter, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   return (
-    <footer className="p-8 text-white text-gray-900 bg-black bg-opacity-100" style={{ backgroundImage: "url('bgstore_img.jpeg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <footer className="p-8 text-white bg-black bg-opacity-100" style={{ backgroundImage: "url('bgstore_img.jpeg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className="container grid grid-cols-1 gap-8 mx-auto md:grid-cols-2 lg:grid-cols-4">
         {/* Contact Information */}
         <div>

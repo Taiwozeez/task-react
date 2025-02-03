@@ -24,7 +24,7 @@ const testimonials: Testimonial[] = [
     carImage: "/testimony111.jpg",
     carAlt: "Black Car",
     quote:
-      "I was skeptical about shopping online at first, but Anthentic Store completely changed my experience! The website is easy to navigate, the products are exactly as described, and the delivery was super fast. Now, I do all my shopping here—it's convenient, reliable, and stress-free!"
+      "I was skeptical about shopping online at first, but Anthentic Store completely changed my experience! The website is easy to navigate, the products are exactly as described, and the delivery was super fast. Now, I do all my shopping here—its convenient, reliable, and stress-free!"
   },
   {
     name: "Aliko Dangote",
@@ -89,7 +89,7 @@ const Testimonialmap: React.FC = () => {
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="mb-8 text-center text-white">
             <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">Find Us Here</h2>
-            <p className="mt-2 text-lg">Visit our Stores and explore our amazing car collection. We're easy to find!</p>
+            <p className="mt-2 text-lg">Visit our Stores and explore our amazing car collection. We&apos;re easy to find!</p>
           </div>
         </div>
         <div className="relative w-full h-96">

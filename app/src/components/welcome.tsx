@@ -33,7 +33,7 @@ const Welcome = () => {
         >
           Discover a wide range of products from all brands, offering the best
           deals and exceptional customer service. Our store is dedicated to
-          providing you with a seamless shopping experience, whether you're
+          providing you with a seamless shopping experience, whether you&apos;re
           looking for new arrivals or pre-owned items. Visit us today and shop
           your favorite products!
         </p>
