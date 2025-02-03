@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image"; // Import Image from Next.js
 
 // Define types for the car data structure
 interface Cars {
@@ -14,7 +15,6 @@ interface Cars {
 interface Quantities {
   [id: string]: number;
 }
-
 
 const cars: Cars[] = [
   {
@@ -234,10 +234,12 @@ const Cars: React.FC = () => {
             className="relative p-4 text-black transition-transform duration-300 transform bg-white rounded-lg shadow-lg hover:scale-105 hover:shadow-2xl group"
           >
             <div className="relative">
-              <img
+              <Image
                 src={car.image}
                 alt={car.name}
                 className="object-cover w-full h-56 transition-transform duration-300 rounded-t-lg"
+                width={500} // Define width
+                height={350} // Define height
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center text-sm text-white transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 group-hover:opacity-100">
                 {car.specs.map((spec, index) => (

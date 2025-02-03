@@ -1,7 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faChevronUp,
   faShoppingCart,
   faBars,
 } from "@fortawesome/free-solid-svg-icons";
