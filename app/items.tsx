@@ -1,5 +1,6 @@
 import { GlobalContext } from "@/context";
 import React, { useContext, useState } from "react";
+import Image from "next/image";
 
 // Define types for the car data structure
 interface Items {
@@ -14,7 +15,6 @@ interface Items {
 interface Quantities {
   [id: string]: number;
 }
-
 
 const Items: React.FC = () => {
   const { productState } = useContext(GlobalContext);
@@ -54,12 +54,12 @@ const Items: React.FC = () => {
       >
         <h1 className="mb-4 text-2xl text-center">Check out our latest products</h1>
         <h2 className="mb-12 text-4xl text-center line-animation">
-        FEATURED PRODUCT
+          FEATURED PRODUCT
         </h2>
       </div>
 
       {/* Cart Count Display */}
-      <div className=" cart-count">
+      <div className="cart-count">
         <p>
           Cart: <span>{cartCount}</span> items
         </p>
@@ -79,10 +79,13 @@ const Items: React.FC = () => {
             className="relative p-4 text-black transition-transform duration-300 transform bg-white rounded-lg shadow-lg hover:scale-105 hover:shadow-2xl group"
           >
             <div className="relative">
-              <img
+              <Image
                 src={car.image}
                 alt={car.name}
+                width={300}
+                height={224}
                 className="object-cover w-full h-56 transition-transform duration-300 rounded-t-lg"
+                unoptimized // This will bypass Next.js image optimization for external domains
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center text-sm text-white transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 group-hover:opacity-100">
                 <p>{car.description}</p>

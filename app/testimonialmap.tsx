@@ -1,7 +1,5 @@
 import { useEffect } from "react";
-// import AOS from "aos";
-// import "aos/dist/aos.css";
-import Testimonialmap from "../app/testimonialmap";
+import Image from "next/image"; // Import Image from next/image
 
 interface Testimonial {
   name: string;
@@ -18,14 +16,15 @@ const testimonials: Testimonial[] = [
     carImage: "/testimony111.jpg",
     carAlt: "Red Car",
     quote:
-"Shopping online with [Your Store Name] has been an amazing experience! The process is simple and seamless—no hassle, no stress. There’s no secret to finding great deals, just a reliable store with quality products and excellent service. I love how easy it is to shop from anywhere!"  },
+      "Shopping online with [Your Store Name] has been an amazing experience! The process is simple and seamless—no hassle, no stress. There’s no secret to finding great deals, just a reliable store with quality products and excellent service. I love how easy it is to shop from anywhere!"
+  },
   {
     name: "Michael Otedola",
     image: "/testimony2.jpeg",
     carImage: "/testimony111.jpg",
     carAlt: "Black Car",
     quote:
-"I was skeptical about shopping online at first, but  Anthentic Store completely changed my experience! The website is easy to navigate, the products are exactly as described, and the delivery was super fast. Now, I do all my shopping here—it's convenient, reliable, and stress-free!"
+      "I was skeptical about shopping online at first, but Anthentic Store completely changed my experience! The website is easy to navigate, the products are exactly as described, and the delivery was super fast. Now, I do all my shopping here—it's convenient, reliable, and stress-free!"
   },
   {
     name: "Aliko Dangote",
@@ -33,8 +32,8 @@ const testimonials: Testimonial[] = [
     carImage: "/testimony111.jpg",
     carAlt: "Blue Car",
     quote:
-"Shopping online has never been this easy! Anthentic Store offers a wide range of high-quality products at great prices. The checkout process was smooth, and my order arrived right on time. I highly recommend it to anyone looking for a hassle-free shopping experience!  😊🛍️"
-  },
+      "Shopping online has never been this easy! Anthentic Store offers a wide range of high-quality products at great prices. The checkout process was smooth, and my order arrived right on time. I highly recommend it to anyone looking for a hassle-free shopping experience! 😊🛍️"
+  }
 ];
 
 const Testimonialmap: React.FC = () => {
@@ -62,9 +61,21 @@ const Testimonialmap: React.FC = () => {
                   className="p-6 transition duration-300 transform bg-gray-100 rounded-lg shadow-lg hover:scale-105 hover:shadow-xl hover:bg-red-50"
                   data-aos="fade-up"
                 >
-                  <img className="object-cover w-full h-40 rounded-t-lg" src={testimonial.carImage} alt={testimonial.carAlt} />
+                  <Image
+                    className="object-cover w-full h-40 rounded-t-lg"
+                    src={testimonial.carImage}
+                    alt={testimonial.carAlt}
+                    width={500} // Add a width to the image
+                    height={300} // Add a height to the image
+                  />
                   <div className="mt-6 text-center">
-                    <img className="w-16 h-16 mx-auto rounded-full" src={testimonial.image} alt={testimonial.name} />
+                    <Image
+                      className="w-16 h-16 mx-auto rounded-full"
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      width={64} // Set the width for the avatar image
+                      height={64} // Set the height for the avatar image
+                    />
                     <h3 className="mt-4 text-lg font-medium leading-6 text-gray-900">{testimonial.name}</h3>
                     <p className="mt-4 text-base leading-6 text-gray-500">{testimonial.quote}</p>
                   </div>

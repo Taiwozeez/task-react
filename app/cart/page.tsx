@@ -1,6 +1,7 @@
 "use client";
 import { GlobalContext } from "@/context";
 import React, { useContext, useState } from "react";
+import Image from "next/image";
 
 interface CartItem {
   id: number;
@@ -51,9 +52,8 @@ const Cart: React.FC = () => {
       return updatedItems;
     });
 
-    // Show success alert
     setShowAlert(true);
-    setTimeout(() => setShowAlert(false), 3000); // Hide the alert after 3 seconds
+    setTimeout(() => setShowAlert(false), 3000);
   };
 
   return (
@@ -76,10 +76,12 @@ const Cart: React.FC = () => {
             className="flex flex-col items-center justify-between p-4 mb-4 bg-white rounded-lg shadow-md sm:flex-row"
           >
             <div className="flex items-center w-3/4 space-x-4">
-              <img
+              <Image
                 src="/testimony111.jpg"
                 alt={item.name}
-                className="object-cover h-24 rounded w-100"
+                width={100}
+                height={100}
+                className="object-cover h-24 rounded"
               />
               <div>
                 <h3 className="text-lg font-medium">{item.name}</h3>

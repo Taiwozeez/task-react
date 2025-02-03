@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Cart from './cart';
+import Image from 'next/image'; // Use this if you're using Next.js
 
 interface CartItem {
   id: number;
@@ -40,9 +40,8 @@ const Cart: React.FC = () => {
       return updatedItems;
     });
 
-    // Show success alert
     setShowAlert(true);
-    setTimeout(() => setShowAlert(false), 3000); // Hide the alert after 3 seconds
+    setTimeout(() => setShowAlert(false), 3000);
   };
 
   return (
@@ -62,12 +61,13 @@ const Cart: React.FC = () => {
         {cartItems.map(item => (
           <div key={item.id} className="flex flex-col items-center justify-between p-4 mb-4 bg-white rounded-lg shadow-md sm:flex-row">
             <div className="flex items-center w-3/4 space-x-4">
-              <img src="/dist/assets/image/cars2.jpeg" alt={item.name} className="object-cover h-24 rounded w-100" />
+              {/* Corrected Image Tag */}
+              <Image src="/assets/image/cars2.jpeg" alt={item.name} width={100} height={100} className="object-cover h-24 rounded w-100" />
               <div>
                 <h3 className="text-lg font-medium">{item.name}</h3>
                 <p className="text-sm text-gray-500">Seller: <span className="font-semibold">Just Rite</span> | Size: <span className="font-semibold">XXL</span></p>
                 <p className="mt-1 text-sm text-red-500"><i className="fas fa-exclamation-circle"></i> 7 units left</p>
-                <p className="mt-1 text-xs font-medium text-red-800"><i className="fas fa-shipping-fast"></i> Athentic Store Express</p>
+                <p className="mt-1 text-xs font-medium text-red-800"><i className="fas fa-shipping-fast"></i> Authentic Store Express</p>
               </div>
             </div>
 

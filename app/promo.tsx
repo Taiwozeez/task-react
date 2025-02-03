@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import Promo from "../app/promo";
+import Image from "next/image"; // Import the Image component
 
-const Promo = () => {
+const PromoSection = () => {
   useEffect(() => {
     console.log("Initializing Promo...");
     // Temporarily remove to check if it causes the error
@@ -11,14 +11,16 @@ const Promo = () => {
   console.log("Rendering PromoSection...");
 
   return (
-    <div className="flex flex-wrap items-center justify-center p-4 mt-20 bg-white"> 
+    <div className="flex flex-wrap items-center justify-center p-4 mt-20 bg-white">
       {/* Image Section Left */}
       <div key="left-image" className="w-full p-2 md:w-1/4">
         <div data-aos="fade-right" data-aos-id="promo-left">
-          <img
+          <Image
             src="/promobag.png"
-            alt="Porsche Boxster"
+            alt="Stylish bag on display"
             className="w-full h-auto rounded-lg"
+            width={500} // Define a width for the image
+            height={500} // Define a height for the image
           />
         </div>
       </div>
@@ -30,7 +32,7 @@ const Promo = () => {
             PROMO
           </h1>
           <p className="mb-2 text-lg text-gray-600">
-          Get the Stylish Outfit You’ve Always Wanted
+            Get the Stylish Outfit You’ve Always Wanted
           </p>
           <p className="mb-2 text-4xl font-bold text-pink-600">30% Off</p>
           <p className="mb-2 text-lg text-gray-600">On All Clothing & Accessories</p>
@@ -44,10 +46,12 @@ const Promo = () => {
       {/* Image Section Right */}
       <div key="right-image" className="w-full p-2 md:w-1/4 bg-white">
         <div data-aos="fade-left" data-aos-id="promo-right">
-          <img
+          <Image
             src="/promobag.png"
-            alt="Porsche Boxster"
+            alt="Stylish bag on display"
             className="w-full h-auto rounded-lg"
+            width={500} // Define a width for the image
+            height={500} // Define a height for the image
           />
         </div>
       </div>
@@ -55,4 +59,4 @@ const Promo = () => {
   );
 };
 
-export default Promo;
+export default PromoSection;
